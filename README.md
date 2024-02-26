@@ -22,13 +22,24 @@ $Env:GOOS="js"; $Env:GOARCH="wasm"; go build -o test.wasm ./cmd/wasm-iface/gen.g
 }
 ```
 
-### WASM Call
-- https://github.com/skkim-01/go-wasm-react-chrome-extension/blob/main/react-chrome-extension-example/src/testpage.js
-
-
 ### Copy wasm files to `react-app/public`
 - `test.wasm`: built
 - `wasm_exec.js`: %GOROOT%/misc/wasm/wasm_exec.js (for me)
+
+### Update `react-app/public/index.html`
+- note `wasm_exec.js`
+```html
+<html>
+  <head>
+    ...
+    <script src="%PUBLIC_URL%/wasm_exec.js"></script>
+    ...
+  </head>
+</html>
+```
+
+### WASM Call
+- https://github.com/skkim-01/go-wasm-react-chrome-extension/blob/main/react-chrome-extension-example/src/testpage.js
 
 ### build chrome extension
 ```
