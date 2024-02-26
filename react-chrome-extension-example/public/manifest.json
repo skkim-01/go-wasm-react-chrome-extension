@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "go-wasm-react-chrom-extension",
+  "description": "",
+  "version": "1.0",
+  "content_security_policy": {
+    "extension_pages": "worker-src 'self'; script-src 'self' 'wasm-unsafe-eval'"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "logo192.png",
+      "32": "logo192.png",
+      "48": "logo192.png",
+      "128": "logo192.png"
+    }
+  },
+  "icons": {
+    "16": "logo192.png",
+    "32": "logo192.png",
+    "48": "logo192.png",
+    "128": "logo192.png"
+  }
+}
