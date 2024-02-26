@@ -13,7 +13,7 @@ export default function TestPage() {
         return;
       }
       try {
-        const go = new window.Go(); // window.Go 객체를 사용하여 Go 인스턴스를 생성합니다.
+        const go = new window.Go();
         const response = await fetch('test.wasm');
         const buffer = await response.arrayBuffer();
         const { instance } = await WebAssembly.instantiate(buffer, go.importObject);
